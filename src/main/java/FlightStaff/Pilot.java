@@ -1,5 +1,7 @@
 package FlightStaff;
 
+import Planes.Plane;
+
 public class Pilot extends FlightStaff {
 
     private String pilotLicenceNumber;
@@ -12,4 +14,8 @@ public class Pilot extends FlightStaff {
     public String getPilotLicenceNumber() {
         return pilotLicenceNumber;
     }
+
+//    public void flyPlane(Plane plane){
+//
+//    }
 }
