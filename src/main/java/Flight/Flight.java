@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class Flight {
 
     private Pilot pilot;
-//    private ArrayList<CabinCrewMember> cabinCrew;
+
+    //    private ArrayList<CabinCrewMember> cabinCrew;
     private ArrayList<Passenger> passengers;
     private Plane plane;
     private int flightNumber;
@@ -35,6 +36,10 @@ public class Flight {
     }
 
     public Plane getPlane(){return plane;}
+
+    public ArrayList<Passenger> getPassengers() {
+        return passengers;
+    }
 
     public int getNumberOfPassengers() {
         return passengers.size();

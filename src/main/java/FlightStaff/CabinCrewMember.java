@@ -1,5 +1,6 @@
 package FlightStaff;
 
+import Flight.Flight;
 import Passengers.Passenger;
 
 import java.util.ArrayList;
@@ -10,9 +11,7 @@ public class CabinCrewMember extends FlightStaff {
         super(name, rank);
     }
 
-//    public String messagePassenger(String message, ArrayList<Passenger> passengers){
-//        for(passenger : passengers){
-//
-//        }
+//    public String messagePassengers(String message, Flight flight){
+//        return message;
 //    }
 }

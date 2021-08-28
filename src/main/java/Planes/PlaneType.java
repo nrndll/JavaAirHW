@@ -2,7 +2,7 @@ package Planes;
 
 public enum PlaneType {
 
-    JUNKERSJU52(28, 2725),
+    JUNKERSJU52(28, 280),
     TERRIBLEPLANE(1, 10);
 
     private final int capacity;
