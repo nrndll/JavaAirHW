@@ -1,5 +1,6 @@
 package FlightStaff;
 
+import Flight.Flight;
 import Planes.Plane;
 
 public class Pilot extends FlightStaff {
@@ -15,7 +16,9 @@ public class Pilot extends FlightStaff {
         return pilotLicenceNumber;
     }
 
-//    public void flyPlane(Plane plane){
-//
-//    }
+    public String flyPlane(Flight flight){
+        Plane plane = flight.getPlane();
+        String output = String.format("Flying %s from %s to %s", plane.getPlaneType(), flight.getDepartureAirport(), flight.getDestination());
+        return output;
+    }
 }

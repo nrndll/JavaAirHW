@@ -9,8 +9,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class FlightTest {
+public class FlightManager {
 
+    private FlightManager flightManager;
     private Pilot pilot;
     private Plane plane;
     private Flight flight;
@@ -24,25 +25,5 @@ public class FlightTest {
         flight = new Flight(pilot, plane, 123467, "LDN", "GLA", "14:00");
         passenger1 = new Passenger("Otto", 5);
         passenger2 = new Passenger("Sump", 6);
-    }
-
-    @Test
-    public void canGetNumberOfAvailableSeats(){
-        assertEquals(28, flight.getAvailableSeats());
-    }
-
-    @Test
-    public void canBookPassenger(){
-        flight.bookPassenger(passenger1);
-        assertEquals(1, flight.getNumberOfPassengers());
-    }
-
-    @Test
-    public void cannotBookPassengerIfAtCapacity(){
-        plane = new Plane(PlaneType.TERRIBLEPLANE);
-        flight = new Flight(pilot, plane, 123467, "LDN", "GLA", "14:00");
-        flight.bookPassenger(passenger1);
-        flight.bookPassenger(passenger2);
-        assertEquals(1, flight.getNumberOfPassengers());
     }
 }

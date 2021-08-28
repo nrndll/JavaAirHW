@@ -2,10 +2,8 @@ package Planes;
 
 public enum PlaneType {
 
-    BOEING747(467, 307600),
-    DOUGLASDC(145, 15400),
-    AIRBUSA340(370, 42500),
-    JUNKERSJU52(28, 2725);
+    JUNKERSJU52(28, 2725),
+    TERRIBLEPLANE(1, 10);
 
     private final int capacity;
     private final double totalWeight;

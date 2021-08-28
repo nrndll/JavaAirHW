@@ -1,3 +1,6 @@
+package Flight;
+
+import FlightStaff.CabinCrewMember;
 import FlightStaff.Pilot;
 import Passengers.Passenger;
 import Planes.Plane;
@@ -8,8 +11,9 @@ import java.util.ArrayList;
 public class Flight {
 
     private Pilot pilot;
-    private Plane plane;
+//    private ArrayList<CabinCrewMember> cabinCrew;
     private ArrayList<Passenger> passengers;
+    private Plane plane;
     private int flightNumber;
     private String destination;
     private String departureAirport;
@@ -17,8 +21,9 @@ public class Flight {
 
     public Flight(Pilot pilot, Plane plane, int flightNumber, String destination, String departureAirport, String departureTime){
         this.pilot = pilot;
-        this.plane = plane;
+//        this.cabinCrew = new ArrayList<>();
         this.passengers = new ArrayList<>();
+        this.plane = plane;
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.departureAirport = departureAirport;
