@@ -1,5 +1,6 @@
 import FlightStaff.Pilot;
 import FlightStaff.Rank;
+import Passengers.Passenger;
 import Planes.Plane;
 import Planes.PlaneType;
 import org.junit.Before;
@@ -12,6 +13,7 @@ public class FlightTest {
     private Pilot pilot;
     private Plane plane;
     private Flight flight;
+    private Passenger passenger1;
 
     @Before
     public void before(){
@@ -23,5 +25,12 @@ public class FlightTest {
     @Test
     public void canGetNumberOfAvailableSeats(){
         assertEquals(28, flight.getAvailableSeats());
+    }
+
+    @Test
+    public void canBookPassenger(){
+        flight.bookPassenger(passenger1);
+        assertEquals(27, flight.getAvailableSeats());
+        assertEquals(1, flight.getNumberOfPassengers());
     }
 }
