@@ -8,6 +8,8 @@ import Flight.FlightManager;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
@@ -16,17 +18,17 @@ public class FlightManagerTest {
     private Pilot pilot;
     private Plane plane;
     private Flight flight;
-    private Passenger passenger1;
-    private Passenger passenger2;
+    private Passenger passenger;
+    private Date departureTime;
 
     @Before
     public void before(){
         flightManager = new FlightManager();
         pilot = new Pilot("Biggles", Rank.CAPTAIN, "777");
         plane = new Plane(PlaneType.JUNKERSJU52);
-        flight = new Flight(pilot, plane, 123467, "LDN", "GLA", "14:00");
-        passenger1 = new Passenger("Otto", 5);
-        passenger2 = new Passenger("Sump", 6);
+        departureTime = new Date();
+        flight = new Flight(pilot, plane, 123467, "LDN", "GLA", departureTime);
+        passenger = new Passenger("Otto", 5);
     }
 
     @Test
@@ -36,8 +38,13 @@ public class FlightManagerTest {
 
     @Test
     public void canCalculateBaggageBooked(){
-        flight.bookPassenger(passenger1);
-        flight.bookPassenger(passenger2);
-        assertEquals(11, flightManager.getBaggageBooked(flight));
+        flight.bookPassenger(passenger);
+        assertEquals(5, flightManager.getBaggageBooked(flight));
+    }
+
+    @Test
+    public void canCalculateBaggageRemaining(){
+        flight.bookPassenger(passenger);
+        assertEquals(275, flightManager.getBaggageRemaining(flight), 0.01);
     }
 }

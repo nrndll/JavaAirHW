@@ -26,4 +26,11 @@ public class FlightManager {
         }
         return totalBaggage;
     }
+
+    public double getBaggageRemaining(Flight flight){
+        Plane plane = flight.getPlane();
+        PlaneType planeType = plane.getPlaneType();
+        double totalWeight = planeType.getTotalWeight();
+        return totalWeight - getBaggageBooked(flight);
+    }
 }
